@@ -6,6 +6,7 @@ CREATE AGGREGATE flatMap (anyarray)
 );
 
 -- http://stackoverflow.com/questions/3994556/eliminate-duplicate-array-values-in-postgres
+-- can't be called 'distinct' like scala, because that's a SQL keyword
 CREATE OR REPLACE FUNCTION uniq (ANYARRAY) RETURNS ANYARRAY
 LANGUAGE SQL
 AS $body$
